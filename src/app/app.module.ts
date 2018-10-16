@@ -14,6 +14,10 @@ import { AuthGuardService } from './services/auth-guard.service';
 import { HttpClientModule } from '@angular/common/http';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import { Routes, RouterModule } from '@angular/router';
+import { CommandeListComponent } from './commande-list/commande-list.component';
+import { CommandeFormComponent } from './commande-list/commande-form/commande-form.component';
+import { MenuComponent } from './menu/menu.component';
+
 
 const appRoutes: Routes = [
   {path: 'auth/signup', component: SignupComponent},
@@ -21,8 +25,11 @@ const appRoutes: Routes = [
   {path: 'books', canActivate: [AuthGuardService], component: BookListComponent},
   {path: 'books/new', canActivate: [AuthGuardService], component: BookFormComponent},
   {path: 'books/view/:id', canActivate: [AuthGuardService], component: SingleBookComponent},
-  {path: '', redirectTo: 'books', pathMatch: 'full'},
-  {path: '**', redirectTo: 'books'}
+  {path: 'commandes', canActivate: [AuthGuardService], component: CommandeListComponent},
+  {path: 'menus', canActivate: [AuthGuardService], component: MenuComponent},
+  {path: 'commandes/new', canActivate: [AuthGuardService], component:  CommandeFormComponent},
+  {path: '', redirectTo: 'commandes', pathMatch: 'full'},
+  {path: '**', redirectTo: 'commandes'}
 ];
 @NgModule({
   declarations: [
@@ -32,7 +39,10 @@ const appRoutes: Routes = [
     BookListComponent,
     SingleBookComponent,
     BookFormComponent,
-    HeaderComponent
+    HeaderComponent,
+    CommandeListComponent,
+    CommandeFormComponent,
+    MenuComponent
   ],
   imports: [
     BrowserModule,

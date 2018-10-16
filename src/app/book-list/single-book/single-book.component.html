@@ -1,3 +1,8 @@
-<p>
-  single-book works!
-</p>
+<div class="row">
+  <div class="col-sm-4 col-sm-offset-4" style="background-color: black;color: azure;padding: 20px">
+    <h1>{{book.title}}</h1>
+    <img style="max-width:300px;" *ngIf="book.photo" [src]="book.photo">
+    <h3>{{book.author}}</h3>
+    <button class="btn btn-default pull-right" (click)="onBack()">Retour</button>
+  </div>
+</div>

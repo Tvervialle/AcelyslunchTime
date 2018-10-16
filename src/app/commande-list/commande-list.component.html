@@ -1,0 +1,23 @@
+<div class="row">
+  <div class="col-sm-12" style="background-color: black;color: azure;padding-bottom: 20px">
+    <h2>les commandes</h2>
+    <div class="list-group">
+      <button class="list-group-item" *ngFor="let commande of commandes; let i = index">
+        <h4>
+          <b>Name</b> : {{commande.Name}}
+          <b>  Menu</b> : {{commande.menu}}
+          <b>  Burger</b> : {{commande.Burger}}
+          <b>  Cuisson</b> : {{commande.cuisson}}
+          <b>  Accompagnement</b> : {{commande.accompagnement}}
+          <b>  Boisson</b> : {{commande.boisson}}
+          <b>  Supplement</b> : {{commande.supplement}}
+  <button class="btn btn-default pull-right" (click)="onDeletecommande(commande)">
+            <span class="glyphicon glyphicon-minus"></span>
+          </button> 
+        </h4>
+      </button>
+
+    </div>
+    <button class="btn btn-primary" (click)="onNewcommande()">Nouvelle commande</button>
+  </div>
+</div>
